@@ -1,6 +1,6 @@
-kind: Pods
+kind: Pod
 apiVersion: v1
-matadata:
+metadata:
   name: multi-containers
 spec:
   containers:
