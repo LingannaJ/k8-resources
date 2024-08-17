@@ -1,4 +1,4 @@
-kind: Pod
+kind: Pods
 apiVersion: v1
 matadata:
   name: multi-containers
