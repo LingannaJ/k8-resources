@@ -6,17 +6,14 @@ spec:
   containers:
   - name: nginx
     image: nginx
-    envFrom:
-    - configMapRef:
-        name: shivdev
-    # env:
-    # - name: course
-    #   valueFrom:
-    #     configMapKeyRef:
-    #       name: shivdev
-    #       key: course
-    # - name: trainer
-    #   valueFrom:
-    #     configMapKeyRef:
-    #       name: shivdev
-    #       key: trainer
+    env:
+    - name: course
+      valueFrom:
+        configMapKeyRef:
+          name: shivdev
+          key: course
+    - name: trainer
+      valueFrom:
+        configMapKeyRef:
+          name: shivdev
+          key: trainer
