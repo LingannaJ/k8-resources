@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nginx
+  labels:  # here we create labels for connect to the pod from accessing the internet
+    name: frontend
+    project: expense
+    component: frontend
+    environment: dev
+spec:
+  containers:
+  - name: nginx
+    image: nginx
