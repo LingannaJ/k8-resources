@@ -8,19 +8,17 @@ spec:
     image: nginx
     envFrom:
     - configMapRef:
-      name: shivdev
-
-    # single key value ni refer cheyadaniki below process
+        name: shivdev
     # env:
     # - name: course
     #   valueFrom:
     #     configMapKeyRef:
-    #       name: shivdev
+    #       name: daws78s
     #       key: course
     # - name: trainer
     #   valueFrom:
     #     configMapKeyRef:
-    #       name: shivdev
+    #       name: daws78s
     #       key: trainer
    
 
