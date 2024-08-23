@@ -21,6 +21,6 @@ spec:
         tier: frontend
         project: shiv-dev
     spec:
-      container:
+      containers:
         name: nginx
         image: nginx
