@@ -1,4 +1,4 @@
-apiVersion: app/v1
+apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: nginx
@@ -14,7 +14,7 @@ spec:
       app: nginx
       tier: frontend
 # below is pod definition
-  templaet:
+  template:
     metadata:
       labels:
         app: nginx
