@@ -19,7 +19,7 @@ spec:
     metadata:
       labels:
         app: nginx
-        tier: wed
+        tier: web
         project: dev-test
         extra-key: test
     spec:
