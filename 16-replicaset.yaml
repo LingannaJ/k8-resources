@@ -14,13 +14,13 @@ spec:
       app: nginx
       tier: frontend
 # below is pod definition
-templaet:
-  metadata:
-    labels:
-      app: nginx
-      tier: frontend
-      project: shiv-dev
-spec:
-  container:
-    name: nginx
-    image: nginx:stable-perl
+  templaet:
+    metadata:
+      labels:
+        app: nginx
+        tier: frontend
+        project: shiv-dev
+    spec:
+      container:
+        name: nginx
+        image: nginx:stable-perl
