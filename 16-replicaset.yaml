@@ -23,4 +23,4 @@ spec:
     spec:
       container:
         name: nginx
-        image: nginx:stable-perl
+        image: nginx
