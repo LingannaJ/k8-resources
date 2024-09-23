@@ -47,20 +47,20 @@ spec:
   - name: persistent-storage
     persistentVolumeClaim:
       claimName: ebs-static
-# ---
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: nginx-lb
-# spec:
-#   type: LoadBalancer
-#   selector:
-#     purpose: ebs-static
-#     project: expense
-#   ports:
-#   - protocol: TCP
-#     port: 80 #service-port
-#     targetPort: 80 #target-port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-lb
+spec:
+  type: LoadBalancer
+  selector:
+    purpose: ebs-static
+    project: expense
+  ports:
+  - protocol: TCP
+    port: 80 #service-port
+    targetPort: 80 #target-port
 
 ## csi drivers installation cdm 
 # kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernetes/overlays/stable/?ref=release-1.35"
