@@ -10,7 +10,7 @@ spec:
   csi:
     driver: ebs.csi.aws.com
     fsType: ext4
-    volumeHandle: vol-0bc2d240466612ec0
+    volumeHandle: vol-083d0d39b9bf7300f
 
 ---
 # createing here pvc
@@ -41,8 +41,8 @@ spec:
     volumeMounts:
     - name: persistent-storage
       mountPath: /usr/share/nginx/html
-  nodeSelector:
-    topology.kubernetes.io/zone: us-east-1d
+  # nodeSelector:
+  #   topology.kubernetes.io/zone: us-east-1d
   volumes:
   - name: persistent-storage
     persistentVolumeClaim:
