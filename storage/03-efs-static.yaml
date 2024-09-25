@@ -12,52 +12,52 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   csi:
     driver: efs.csi.aws.com
-    volumeHandle: #here give your aws volume id
+    volumeHandle: fs-057f12b165183670e #here give your aws volume id
 ---
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: efs-static-claim
-spec:
-  accessModes:
-    - ReadWriteOnce
-  storageClassName: ""
-  volumeName: efs-static
-  resources:
-    requests:
-      storage: 3Gi
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: efs-app
-  labels:
-    purpose: efs-static
-    project:  expense
-spec:
-  containers:
-  - name: nginx
-    image: nginx
-    - name: persistent-storage
-      mountPath: /usr/share/nginx/html
-  volumes:
-  - name: persistent-storage
-    persistentVolumeClaim:
-      claimName: efs-static-claim
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: nginx-lb
-spec:
-  type: LoadBalancer
-  selector:
-    purpose: efs-static
-    project: expense
-  ports:
-  - protocol: TCP
-    port: 80 #service-port
-    targetPort: 80 #target-port
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: efs-static-claim
+# spec:
+#   accessModes:
+#     - ReadWriteOnce
+#   storageClassName: ""
+#   volumeName: efs-static
+#   resources:
+#     requests:
+#       storage: 3Gi
+# ---
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: efs-app
+#   labels:
+#     purpose: efs-static
+#     project:  expense
+# spec:
+#   containers:
+#   - name: nginx
+#     image: nginx
+#     - name: persistent-storage
+#       mountPath: /usr/share/nginx/html
+#   volumes:
+#   - name: persistent-storage
+#     persistentVolumeClaim:
+#       claimName: efs-static-claim
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: nginx-lb
+# spec:
+#   type: LoadBalancer
+#   selector:
+#     purpose: efs-static
+#     project: expense
+#   ports:
+#   - protocol: TCP
+#     port: 80 #service-port
+#     targetPort: 80 #target-port
 
 
  # Efs Csi drivers install cmd below
