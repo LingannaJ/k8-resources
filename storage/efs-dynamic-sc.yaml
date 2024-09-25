@@ -6,6 +6,6 @@ reclaimPolicy: Retain
 provisioner: efs.csi.aws.com
 parameters:
   provisioningMode: efs-ap
-  fileSystemId: #here give your aws volume id
+  fileSystemId: fs-0916581472a3aec5a #here give your aws volume id
   directoryPerms: "700"
   basePath: "/expense" # this path admin create given to us, for use of expense project storage in this path we can use our storage, like this we can add multiple projects in this same storage class
