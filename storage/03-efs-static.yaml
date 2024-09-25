@@ -43,20 +43,20 @@ spec:
   - name: persistent-storage
     persistentVolumeClaim:
       claimName: efs-static-claim
-# ---
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: nginx-lb
-# spec:
-#   type: LoadBalancer
-#   selector:
-#     purpose: efs-static
-#     project: expense
-#   ports:
-#   - protocol: TCP
-#     port: 80 #service-port
-#     targetPort: 80 #target-port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-lb
+spec:
+  type: LoadBalancer
+  selector:
+    purpose: efs-static
+    project: expense
+  ports:
+  - protocol: TCP
+    port: 80 #service-port
+    targetPort: 80 #target-port
 
 
  # Efs Csi drivers install cmd below
