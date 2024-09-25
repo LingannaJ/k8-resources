@@ -5,7 +5,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteMany
-  storageClassName: efs-dynamic-sc
+  storageClassName: efs-sc
   resources:
     requests:
       storage: 5Gi
@@ -27,7 +27,7 @@ spec:
   volumes:
     - name: persistent-storage
       persistentVolumeClaim:
-        claimName: efs-dynamic-sc
+        claimName: efs-dynamic
 ---
 apiVersion: v1
 kind: Service
