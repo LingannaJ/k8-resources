@@ -20,7 +20,6 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: ""
   volumeName: efs-static
   resources:
     requests:
@@ -37,6 +36,7 @@ spec:
   containers:
   - name: nginx
     image: nginx
+    volumeMounts:
     - name: persistent-storage
       mountPath: /usr/share/nginx/html
   volumes:
